@@ -3,7 +3,7 @@ public class Calendar {
 	static int dayOfMonth = 1;   
 	static int month = 1;
 	static int year = 2021;
-	static int dayOfWeek = 4;     // 1.1.1900 was a Monday
+	static int dayOfWeek = 7;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
@@ -22,12 +22,12 @@ public class Calendar {
 		 	System.out.print(dayOfMonth+"/");
 			System.out.print(month+"/");
 			System.out.print(year);
-			if(dayOfWeek == 1) System.out.print(" Sunday");
+			if(dayOfWeek == 2) System.out.print(" Sunday");
 			System.out.println();
 
 	 		advance();
 	 		debugDaysCounter++;
-	 		if (debugDaysCounter >= 367) { // checks end of loop by days passed
+	 		if (debugDaysCounter >= 365) { // checks end of loop by days passed
 				// System.out.println("During the 20th century, " + sundayFunDay + " Sundays fell on the first day of the month");
 	 			break;
 	 		}
@@ -73,10 +73,10 @@ public class Calendar {
 			}
 			else return 30;
 		}
-		// else if (month == 2){ // checks for Feb according to leap year
-		// 	if ((isLeapYear(year) == true)) return 29;
-		// 	else return 28;
-		// }
+		else if (month == 2){ // checks for Feb according to leap year
+			// if ((isLeapYear(year) == true)) return 29;
+			 return 28;
+		}
 		else {
 			if(month % 2 == 0) return 30;
 			else return 31;

@@ -43,20 +43,20 @@ public class Calendar {
 		if(dayOfMonth < nDaysInMonth){ // checks if month hasn't ended
 			dayOfMonth++;
 		}
-		else { // month ended
-			dayOfMonth = 1;
-			month++;
-			nDaysInMonth = nDaysInMonth(month, year);
-			if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
-				sundayFunDay++;
-			}
+		// else { // month ended
+		// 	dayOfMonth = 1;
+		// 	month++;
+		// 	nDaysInMonth = nDaysInMonth(month, year);
+		// 	if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
+		// 		sundayFunDay++;
+			// }
 			// if(month == 13){ // checks if year has ended
 			// 	month = 1;
 			// 	year++;
 			// 	nDaysInMonth = nDaysInMonth(month, year);
 			// }
 		}
-	 }
+	 
 		 
     // Returns true if the given year is a leap year, false otherwise.
 	// private static boolean isLeapYear(int year) {

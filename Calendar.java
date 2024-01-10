@@ -27,7 +27,7 @@ public class Calendar {
 
 	 		advance();
 	 		debugDaysCounter++;
-	 		if (debugDaysCounter >= 365) { // checks end of loop by days passed
+	 		if (debugDaysCounter >= 367) { // checks end of loop by days passed
 				// System.out.println("During the 20th century, " + sundayFunDay + " Sundays fell on the first day of the month");
 	 			break;
 	 		}

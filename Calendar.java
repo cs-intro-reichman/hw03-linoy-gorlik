@@ -50,11 +50,11 @@ public class Calendar {
 			if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
 				sundayFunDay++;
 			}
-			if(month == 13){ // checks if year has ended
-				month = 1;
-				year++;
-				nDaysInMonth = nDaysInMonth(month, year);
-			}
+			// if(month == 13){ // checks if year has ended
+			// 	month = 1;
+			// 	year++;
+			// 	nDaysInMonth = nDaysInMonth(month, year);
+			// }
 		}
 	 }
 		 
@@ -73,10 +73,10 @@ public class Calendar {
 			}
 			else return 30;
 		}
-		else if (month == 2){ // checks for Feb according to leap year
-			if ((isLeapYear(year) == true)) return 29;
-			else return 28;
-		}
+		// else if (month == 2){ // checks for Feb according to leap year
+		// 	if ((isLeapYear(year) == true)) return 29;
+		// 	else return 28;
+		// }
 		else {
 			if(month % 2 == 0) return 30;
 			else return 31;

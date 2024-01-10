@@ -2,11 +2,11 @@
  * Prints the calendars of all the years in the 20th century.
  */
 public class Calendar {	
-    // Starting the calendar on 1/1/1900
+   // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
 	static int year = 1900;
-	static int dayOfWeek = 0;     // 1.1.1900 was a Monday
+	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
@@ -15,17 +15,25 @@ public class Calendar {
 	 * number of Sundays that occured on the first day of the month during this period.
 	 */
 	public static void main(String args[]) {
-		int year = Integer.parseInt(args[0]);
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
-	    int debugDaysCounter = 0; 
+	    int debugDaysCounter = 0;
+		int inputYear = Integer.parseInt(args[0]);
+		int currentYear = year; 
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
+		// int daysAdd = (inputYear - currentYear) % 7;
+	    // dayOfWeek = (daysAdd + dayOfWeek) % 7;
+	    
+		while (year < inputYear) {
+			advance();
+		}
+
 	 	while (true) {
 		 	System.out.print(dayOfMonth+"/");
 			System.out.print(month+"/");
-			System.out.print(year);
+			System.out.print(inputYear);
 			if(dayOfWeek == 1) System.out.print(" Sunday");
 			System.out.println();
 
@@ -35,9 +43,9 @@ public class Calendar {
 				// System.out.println("During the 20th century, " + sundayFunDay + " Sundays fell on the first day of the month");
 	 			break;
 	 		}
-        }
+		}
 	 }
-	
+		
 	 // Advances the date (day, month, year) and the day-of-the-week.
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
@@ -54,7 +62,7 @@ public class Calendar {
 			if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
 				sundayFunDay++;
 			}
-			if(month == 13){ // checks if year has ended
+			if(month == 13){ // checks if inputYear has ended
 				month = 1;
 				year++;
 				nDaysInMonth = nDaysInMonth(month, year);

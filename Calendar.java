@@ -5,7 +5,7 @@ public class Calendar {
 	static int year = 2021;
 	static int dayOfWeek = 7;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
-	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
+	// static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  

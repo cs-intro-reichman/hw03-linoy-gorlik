@@ -1,17 +1,21 @@
+/** 
+ * Prints the calendars of all the years in the 20th century.
+ */
 public class Calendar {	
     // Starting the calendar on 1/1/1900
 	static int dayOfMonth = 1;   
 	static int month = 1;
-	static int year = 2021;
-	static int dayOfWeek = 7;     // 1.1.1900 was a Monday
+	static int year = 1900;
+	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
-	// static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
+	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
 	 * number of Sundays that occured on the first day of the month during this period.
 	 */
 	public static void main(String args[]) {
+		int year = Integer.parseInt(args[0]);
 		// Advances the date and the day-of-the-week from 1/1/1900 till 31/12/1999, inclusive.
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
@@ -22,7 +26,7 @@ public class Calendar {
 		 	System.out.print(dayOfMonth+"/");
 			System.out.print(month+"/");
 			System.out.print(year);
-			if(dayOfWeek == 2) System.out.print(" Sunday");
+			// if(dayOfWeek == 1) System.out.print(" Sunday");
 			System.out.println();
 
 	 		advance();
@@ -47,24 +51,24 @@ public class Calendar {
 			dayOfMonth = 1;
 			month++;
 			nDaysInMonth = nDaysInMonth(month, year);
-			// if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
-			// 	sundayFunDay++;
+			if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
+				sundayFunDay++;
 			}
-			// if(month == 13){ // checks if year has ended
-			// 	month = 1;
-			// 	year++;
-			// 	nDaysInMonth = nDaysInMonth(month, year);
-			// }
+			if(month == 13){ // checks if year has ended
+				month = 1;
+				year++;
+				nDaysInMonth = nDaysInMonth(month, year);
+			}
 		}
-	 
-	
+	 }
+		 
     // Returns true if the given year is a leap year, false otherwise.
-	// private static boolean isLeapYear(int year) {
-	// 	if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){ // checks according to calendar rules
-	// 		return true;
-	// 	}
-	// 	return false;
-	
+	private static boolean isLeapYear(int year) {
+		if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){ // checks according to calendar rules
+			return true;
+		}
+		return false;
+	}
 
 	private static int nDaysInMonth(int month, int year) { // returns the number of days in given month
 		if(month >= 8) { // if month Aug or after
@@ -74,14 +78,14 @@ public class Calendar {
 			else return 30;
 		}
 		else if (month == 2){ // checks for Feb according to leap year
-			// if ((isLeapYear(year) == true)) return 29;
-			 return 28;
+			if ((isLeapYear(year) == true)) return 29;
+			else return 28;
 		}
 		else {
 			if(month % 2 == 0) return 30;
 			else return 31;
 		}
-	} 
-
+	}
 }
+
 

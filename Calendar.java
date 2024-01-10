@@ -5,7 +5,7 @@ public class Calendar {
 	static int year = 2021;
 	static int dayOfWeek = 7;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
-	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
+	// static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
 	/** 
 	 * Prints the calendars of all the years in the 20th century. Also prints the  
@@ -47,8 +47,8 @@ public class Calendar {
 			dayOfMonth = 1;
 			month++;
 			nDaysInMonth = nDaysInMonth(month, year);
-			if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
-				sundayFunDay++;
+			// if(dayOfWeek == 1){ // checks and adds sundays, 1st of the month
+			// 	sundayFunDay++;
 			}
 			// if(month == 13){ // checks if year has ended
 			// 	month = 1;
@@ -56,8 +56,8 @@ public class Calendar {
 			// 	nDaysInMonth = nDaysInMonth(month, year);
 			// }
 		}
-	 }
-		 
+	 
+	
     // Returns true if the given year is a leap year, false otherwise.
 	// private static boolean isLeapYear(int year) {
 	// 	if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){ // checks according to calendar rules
@@ -81,7 +81,7 @@ public class Calendar {
 			if(month % 2 == 0) return 30;
 			else return 31;
 		}
-	} }
+	} 
 
-
+}
 

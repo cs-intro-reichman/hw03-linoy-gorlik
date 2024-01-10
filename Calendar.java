@@ -59,12 +59,12 @@ public class Calendar {
 	 }
 		 
     // Returns true if the given year is a leap year, false otherwise.
-	private static boolean isLeapYear(int year) {
-		if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){ // checks according to calendar rules
-			return true;
-		}
-		return false;
-	}
+	// private static boolean isLeapYear(int year) {
+	// 	if((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))){ // checks according to calendar rules
+	// 		return true;
+	// 	}
+	// 	return false;
+	
 
 	private static int nDaysInMonth(int month, int year) { // returns the number of days in given month
 		if(month >= 8) { // if month Aug or after
@@ -81,7 +81,7 @@ public class Calendar {
 			if(month % 2 == 0) return 30;
 			else return 31;
 		}
-	}
-}
+	} }
+
 
 

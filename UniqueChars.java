@@ -11,7 +11,12 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        String newStr= "";
+        for(int i=0; i<s.length(); i++){ // runs the loop according to strings length
+            if((newStr.indexOf((s.charAt(i))) == -1) || (s.charAt(i) == 32)) { // checks if the current char is in the loop or its a space
+                newStr += s.charAt(i); // if so, adds to new string
+            }
+        }
+        return newStr;
     }
 }

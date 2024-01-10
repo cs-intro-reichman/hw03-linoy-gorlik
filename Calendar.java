@@ -3,7 +3,7 @@ public class Calendar {
 	static int dayOfMonth = 1;   
 	static int month = 1;
 	static int year = 2021;
-	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
+	static int dayOfWeek = 4;     // 1.1.1900 was a Monday
 	static int nDaysInMonth = 31; // Number of days in January
 	static int sundayFunDay = 0; // counter for number of sundays that are the 1st of the month
 	
